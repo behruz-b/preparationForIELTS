@@ -3,7 +3,7 @@ This is website as name for preparing for IELTS online. Yeah,it can be similar w
 help to teachers who prepare make-up class on English, especially IELTS. Here main attention will be checking the compositions(essays),
 it is a difference among other sites.Incidentally essays will check by hand in the beginning then it also will check automatically.
 In addition the website will has 4 types, there are: Reading, Listening, Writing and Speaking.
-  ****
+  ,,,,
   So following we will consider the structure of site:
   **
   The site includes timer that the reader must be in time to read and understand the meaning of text, and answer the questions
@@ -19,5 +19,5 @@ In addition the website will has 4 types, there are: Reading, Listening, Writing
     the last speaking will connected with program that voice recognition and give the permission continue if the voice sounds
     correctly.
     **
-    ****
+    ,,,,
 ##AND THE ADVANTAGES OF THIS SITE, HERE THE TEACHER CAN CREATE, CHANGE, DELETE, UPDATE THE QUESTIONS, PROBLEMS, TEXT AND SOME RULES, AND SURELY THE TEACHER WILL WATCH THE OTHER ACTIVITY AND IN CERTAIN CASES SCORE##
