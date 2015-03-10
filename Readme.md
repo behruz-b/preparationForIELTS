@@ -15,5 +15,4 @@ In addition the website will has 4 types, there are: Reading, Listening, Writing
     not less than require, it depends of step of study. And if the essay will less than require the answer won't accept.And 
     the last speaking will connected with program that voice recognition and give the permission continue if the voice sounds
     correctly.
-    ===
-###AND THE ADVANTAGES OF THIS SITE, HERE THE TEACHER CAN CREATE, CHANGE, DELETE, UPDATE THE QUESTIONS, PROBLEMS, TEXT AND SOME RULES, AND SURELY THE TEACHER WILL WATCH THE OTHER ACTIVITY AND IN CERTAIN CASES SCORE
+### AND THE ADVANTAGES OF THIS SITE, HERE THE TEACHER CAN CREATE, CHANGE, DELETE, UPDATE THE QUESTIONS, PROBLEMS, TEXT AND SOME RULES, AND SURELY THE TEACHER WILL WATCH THE OTHER ACTIVITY AND IN CERTAIN CASES SCORE
