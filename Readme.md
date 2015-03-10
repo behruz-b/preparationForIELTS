@@ -14,7 +14,9 @@ In addition the website will has 4 types, there are: Reading, Listening, Writing
  * The site includes timer that the reader must be in time to read and understand the meaning of text, and answer the questions
    after every part of text. Questions will be different, they can be "short answer", "choosing a right answer among 3 or 5 variants",
    or write oneself, of course they are in reading part of site.
+
 -
+
  * Listening is also can be similar as reading.
 
 -
