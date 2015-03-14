@@ -1,0 +1,34 @@
+@(marks: List[Mark])
+@main("MarksList") {
+    @navbar("marks")
+    <br/> <br/>
+    <div class="container">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>number</th>
+                <th>name</th>
+                <th>readning</th>
+                <th>listening</th>
+                <th>writing</th>
+                <th>speaking</th>
+                <th>total</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(mark <- marks) {
+            <tr>
+                <td>@mark.id</td>
+                <td>@mark.name</td>
+                <td>@mark.reading</td>
+                <td>@mark.listening</td>
+                <td>@mark.writing</td>
+                <td>@mark.speaking</td>
+                <td>@mark.total</td>
+
+            </tr>
+        }
+        </tbody>
+    </table>
+    </div>
+}
