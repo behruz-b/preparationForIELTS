@@ -1,0 +1,20 @@
+@(activePage: String)
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
+            </span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">IELTS-prep</a>
+        </div>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav">
+                <li class="@if(activePage == "home") {active}"><a href="@routes.Application.index()">Home</a></li>
+                <li class="@if(activePage == "marks") {active}"><a href="@routes.MarkList.showList()">Marks</a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
