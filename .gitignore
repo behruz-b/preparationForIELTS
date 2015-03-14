@@ -3,6 +3,7 @@ project/project
 project/target
 target
 public
+bootstrab.min.css
 tmp
 .history
 dist
