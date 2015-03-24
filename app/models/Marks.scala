@@ -3,14 +3,32 @@ package models
 /**
  * Created by Behruz on 3/13/2015.
  */
-case class Mark(id:Int, name:String, reading: Double,listening: Double, writing:Double, speaking: Double, total:Double)
-object Markof{
-  var marks= List(
-  Mark(1,"Behruz",90.5,75.8,66.9,81.4,78.65),
-  Mark(2,"*******",0,0,0,0,0),
-  Mark(3,"******",0,0,0,0,0)
-  )
-  def list=marks.toList
+import play.api.db.slick.Config.driver.simple._
+case class Mark(id:Option[Int],
+                name:String,
+                reading: Double,
+                listening: Double,
+                writing:Double,
+                speaking: Double,
+                total:Double)
+class Markof(tag:Tag) extends Table[Mark] (tag, "Marks") {
+
+  def id = column[Int]("ID", O.PrimaryKey, O.AutoInc)
+
+  def name = column[String]("NAME", O.Default(""))
+
+  def reading = column[Double]("READING", O.Default(0))
+
+  def listening = column[Double]("LISTENING", O.Default(0))
+
+  def writing = column[Double]("WRITING", O.Default(0))
+
+  def speaking = column[Double]("SPEAKING", O.Default(0))
+
+  def total = column[Double]("TOTAL", O.Default(0))
+
+  def * = (id.?, name, reading, listening, writing, speaking, total) <> (Mark.tupled, Mark.unapply _)
+
 }
 
 
