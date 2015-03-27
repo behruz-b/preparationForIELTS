@@ -30,5 +30,13 @@ class Markof(tag:Tag) extends Table[Mark] (tag, "Marks") {
   def * = (id.?, name, reading, listening, writing, speaking, total) <> (Mark.tupled, Mark.unapply _)
 
 }
+case class  Text(id:Option[Int],
+                  text: String)
+class Rtext(tag:Tag) extends Table[Text] (tag, "Rtext"){
+    def id = column[Int]("ID", O.PrimaryKey, O.AutoInc)
+
+    def text = column[String]("Rtext", O.Default(""))
+    def * = (id.?,text) <> (Text.tupled, Text.unapply _)
+}
 
 

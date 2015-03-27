@@ -1,0 +1,16 @@
+
+@(texts: List[Text])
+@main("Reading") {
+    @navbar("reading")
+    <br/> <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+            @for(text <- texts) {
+                <h3>@text.text</h3>
+            }
+            </div>
+        </div>
+    </div>
+}
+

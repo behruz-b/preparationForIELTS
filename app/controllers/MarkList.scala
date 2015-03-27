@@ -18,5 +18,6 @@ class MarkList extends Controller {
     Logger.info(s"SHOW_ALL = ${markList.list}")
     Ok(views.html.marksList(markList.list))
   }
-}
 
+
+}
