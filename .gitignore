@@ -15,7 +15,7 @@ dist
 /.project
 /RUNNING_PID
 /.settings
-/*.gitignore
+.gitignore
 application_local.conf
 
     
