@@ -1,0 +1,21 @@
+@()
+    @main("rform") {
+
+        @navbar("rform")
+
+        <div class="container main-content">
+            <h2 class="text-center">Add text for reading</h2>
+            <form class="@routes.TextList.add" method="post">
+                <div class="form-group">
+                    <label for="title">Title of text</label>
+                    <textarea name="RTitle" id="title" required="" class="form-control"></textarea>
+                    <label for="inp-text">ReadingText</label>
+                    <textarea type="textarea" class="form-control" id="inp-text"
+                name="RText" required="">
+                    </textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+
+        </div>
+    }
