@@ -3,13 +3,14 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
-GET     /MarksOfPart/list           @controllers.MarkList.showList
-GET     /Rtext/new                  @controllers.TextList.showRForm
-POST    /Rtext/new                  @controllers.TextList.add
-GET     /Reading                    @controllers.TextList.reading
+GET         /                        controllers.Application.index
+GET         /MarksOfPart/list        @controllers.MarkList.showList
+GET         /Rtext/new               @controllers.TextList.showRForm
+POST        /Rtext/new               @controllers.TextList.add
+GET         /Reading                 @controllers.TextList.reading
+GET         /Rtext/:id/delete            @controllers.TextList.remove(id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /assets/*file            controllers.Assets.at(path="/public", file)
 
     

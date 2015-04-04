@@ -22,10 +22,11 @@ class TextList extends Controller {
 
   def add = DBAction { implicit request =>
     val formParams = request.body.asFormUrlEncoded
-    val text = formParams.get("text")(0)
+    val text = formParams.get("RText")(0)
+    val title = formParams.get("RTitle")(0)
 
 
-    val textId = (textList returning textList.map(_.id)) += Text(None, text)
+    val textId = (textList returning textList.map(_.id)) += Text(None, text, title)
     Logger.info(s"LastId = $textId")
     Redirect(routes.TextList.reading())
   }
@@ -34,6 +35,9 @@ class TextList extends Controller {
     Logger.info(s"SHOW_ALL = ${textList.list}")
     Ok(views.html.reading(textList.list))
   }
-
+  def remove(id: Int) = DBAction { implicit request =>
+  textList.filter(_.id === id). delete;
+    Redirect(routes.TextList.reading())
+  }
 
 }

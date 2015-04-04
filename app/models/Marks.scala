@@ -31,12 +31,13 @@ class Markof(tag:Tag) extends Table[Mark] (tag, "Marks") {
 
 }
 case class  Text(id:Option[Int],
-                  text: String)
+                  text: String,
+                  title: String)
 class Rtext(tag:Tag) extends Table[Text] (tag, "Rtext"){
     def id = column[Int]("ID", O.PrimaryKey, O.AutoInc)
-
     def text = column[String]("Rtext", O.Default(""))
-    def * = (id.?,text) <> (Text.tupled, Text.unapply _)
+    def title = column[String]("RTitle", O.Default(""))
+    def * = (id.?,text,title) <> (Text.tupled, Text.unapply _)
 }
 
 
