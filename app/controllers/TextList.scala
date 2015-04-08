@@ -15,6 +15,11 @@ class TextList extends Controller {
   val textList = TableQuery[Rtext]
 
 
+  def reading = DBAction { implicit rs =>
+    Logger.info(s"SHOW_ALL = ${textList.list}")
+    Ok(views.html.reading(textList.list))
+  }
+
   def showRForm = Action {
     Ok(views.html.rform())
   }
@@ -29,11 +34,6 @@ class TextList extends Controller {
     val textId = (textList returning textList.map(_.id)) += Text(None, text, title)
     Logger.info(s"LastId = $textId")
     Redirect(routes.TextList.reading())
-  }
-
-  def reading = DBAction { implicit rs =>
-    Logger.info(s"SHOW_ALL = ${textList.list}")
-    Ok(views.html.reading(textList.list))
   }
   def remove(id: Int) = DBAction { implicit request =>
   textList.filter(_.id === id). delete;
