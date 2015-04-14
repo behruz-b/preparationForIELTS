@@ -1,0 +1,18 @@
+@(textGroup: TextGroup)
+
+@main("Edit") {
+
+  @navbar("addTextGroup")
+
+  <div class="container main-content">
+    <h2 class="text-center">Edit textgroup</h2>
+    <form class="@routes.TextGroups.update(textGroup.id.get)" method="post">
+      <div class="form-group">
+        <label for="inp-name">Name</label>
+        <input type="text" class="form-control" id="inp-name"
+        name="name" value="@textGroup.name" required="">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+}

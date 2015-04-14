@@ -10,6 +10,16 @@ GET         /Rtext/new               @controllers.TextList.showRForm
 POST        /Rtext/new               @controllers.TextList.add
 GET         /Reading                 @controllers.TextList.reading
 GET         /Rtext/:id/delete        @controllers.TextList.remove(id: Int)
+POST        /Rtext/:id/edit          @controllers.TextList.update(id: Int)
+GET         /Rtext/:id/edit          @controllers.TextList.showEditForm(id: Int)
+
+GET         /textgroups/list          @controllers.TextGroups.list
+GET         /textgroups/new           @controllers.TextGroups.showAddForm
+POST        /textgroups/new           @controllers.TextGroups.add
+GET         /textgroup/:id/remove      @controllers.TextGroups.remove(id: Int)
+POST        /textgroup/:id/edit        @controllers.TextGroups.update(id: Int)
+GET         /textgroup/:id/edit        @controllers.TextGroups.showEditForm(id: Int)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file            controllers.Assets.at(path="/public", file)

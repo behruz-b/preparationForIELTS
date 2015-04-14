@@ -1,24 +1,30 @@
-@(texts: List[Text])
-    @main("Reading") {
-        @navbar("reading")
-        <br/> <br/>
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-xs-9 col-xs-offset-2">
-                @for(text <- texts) {
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <h2>@text.title</h2>
-                            <h3>@text.text</h3></div>
-                        <div class="col-xs-2">
-                            <a href="@routes.TextList.remove(text.id.get)">
-                                <button class="btn btn-danger">Delete</button>
-                            </a>
-                        </div>
+@(texts: List[TextForDisplay])
+@main("Reading") {
+    @navbar("reading")
+    <br/> <br/>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-9 col-xs-offset-2">
+            @for(textObj <- texts) {
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h2>@textObj.text.title</h2>
+                        <h3>@textObj.text.text</h3></div>
+                    <div class="col-xs-1">
+                        <a href="@routes.TextList.update(textObj.text.id.get)">
+                            <button class="btn btn-warning">Edit</button>
+                        </a>
+                        <a href="@routes.TextList.remove(textObj.text.id.get)">
+                            <button class="btn btn-danger">Delete</button>
+                        </a>
                     </div>
-                }
+                    <div class="col-xs-1">
+                        <p>@textObj.textGroupName</p>
+                    </div>
                 </div>
+            }
             </div>
         </div>
-    }
+    </div>
+}
 
