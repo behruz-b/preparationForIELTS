@@ -1,5 +1,6 @@
 package controllers
 
+import controllers.Application._
 import play.api.mvc._
 import play.api.db.slick.Config.driver.simple._
 import play.api.db.slick._
@@ -17,7 +18,6 @@ class TextList extends Controller {
 
 
   def reading = DBAction { implicit rs =>
-   // Logger.info(s"SHOW_ALL = ${textList.list}")
     val textResult = (for {
       (text, textGroup) <- textList leftJoin textGroups on(_.textGroupId === _.id)
     } yield  (text,textGroup.name)).list
@@ -25,21 +25,29 @@ class TextList extends Controller {
 
     Ok(views.html.reading(textResult))
   }
+  def listening = DBAction { implicit rs =>
+    val textResult = (for {
+      (text, textGroup) <- textList leftJoin textGroups on(_.textGroupId === _.id )
+    } yield  (text,textGroup.name)).list
+      .map {case (text, textGroupName) => TextForDisplay(text,textGroupName)}
 
+    Ok(views.html.listening(textResult))
+  }
   def showRForm = DBAction { implicit rs =>
     Ok(views.html.addText(textGroups.list))
   }
 
 
+
   def add = DBAction { implicit request =>
     val formParams = request.body.asFormUrlEncoded
-    val title = formParams.get("RTitle")(0)
-    val text = formParams.get("RText")(0)
+    val title = formParams.get("Title")(0)
+    val text = formParams.get("Text")(0)
     val textGroupId = formParams.get("textGroup")(0).toInt
 
     val textId = (textList returning textList.map(_.id)) += Text(None, title, text, textGroupId)
     Logger.info(s"LastId = $textId")
-    Redirect(routes.TextList.reading())
+    Redirect(routes.TextList.listening())
   }
   def remove(id: Int) = DBAction { implicit request =>
     textList.filter(_.id === id). delete;
@@ -47,8 +55,8 @@ class TextList extends Controller {
   }
   def update(id: Int) = DBAction { implicit rs =>
     val formParams = rs.body.asFormUrlEncoded
-    val title = formParams.get("Rtitle")(0)
-    val text = formParams.get("Rtext")(0)
+    val title = formParams.get("title")(0)
+    val text = formParams.get("text")(0)
     val textGroupId = formParams.get("textGroup")(0).toInt
 
     val texts = Text(Some(id), title,text, textGroupId)

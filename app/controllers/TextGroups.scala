@@ -22,6 +22,7 @@ class TextGroups extends Controller {
   def add = DBAction { implicit request =>
     val formParams = request.body.asFormUrlEncoded
     val name = formParams.get("name")(0)
+
     val textId = (textGroups returning textGroups.map(_.id)) += TextGroup(None, name)
     Logger.info(s"LastId = $textId")
     Redirect(routes.TextGroups.list())

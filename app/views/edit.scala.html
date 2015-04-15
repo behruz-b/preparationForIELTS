@@ -9,12 +9,12 @@
         <form class="@routes.TextList.update(text.id.get)" method="post">
             <div class="form-group">
                 <label for="title">Title of text</label>
-                <input name="RTitle" id="title" value="@text.title" required="" class="form-control"/>
+                <input name="Title" id="title" value="@text.title" required="" class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="inp-text">ReadingText</label>
                 <textarea type="textarea" class="form-control" id="inp-text"
-                name="RText" required="">@text.text</textarea>
+                name="Text" required="">@text.text</textarea>
             </div>
             <div class="form-group">
                 <label for="inp-textgroup">TextGroup</label>

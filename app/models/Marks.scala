@@ -34,8 +34,8 @@ class Markof(tag:Tag) extends Table[Mark] (tag, "Marks") {
 
 }
 case class  Text(id:Option[Int],
-                  text: String,
                   title: String,
+                  text: String,
                   textGroupId: Int)
 
 case class TextForDisplay(text: Text,
@@ -47,10 +47,10 @@ case class TextGroup(id: Option[Int],
 class Rtext(tag:Tag) extends Table[Text] (tag, "Rtext"){
     val textGroups = TableQuery[TextGroupTable]
     def id = column[Int]("ID", O.PrimaryKey, O.AutoInc)
-    def text = column[String]("Rtext", O.Default(""))
-    def title =   column[String]("RTitle", O.Default(""))
-    def textGroupId = column[Int] ("TEXTGROUP_ID", O.NotNull)
-    def * = (id.?,text,title,textGroupId) <> (Text.tupled, Text.unapply _)
+    def title =   column[String]("Title", O.Default(""))
+  def text = column[String]("Text", O.Default(""))
+  def textGroupId = column[Int] ("TEXTGROUP_ID", O.NotNull)
+    def * = (id.?,title,text,textGroupId) <> (Text.tupled, Text.unapply _)
 
     def textGroup = foreignKey("TEXT_FK_TEXTGROUP_ID",textGroupId, textGroups)(_.id)
 }

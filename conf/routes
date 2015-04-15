@@ -4,7 +4,7 @@
 
 # Home page
 GET         /                        controllers.Application.index
-GET         /Listening               controllers.Application.listening
+GET         /Listening               @controllers.TextList.listening
 GET         /MarksOfPart/list        @controllers.MarkList.showList
 GET         /Rtext/new               @controllers.TextList.showRForm
 POST        /Rtext/new               @controllers.TextList.add
