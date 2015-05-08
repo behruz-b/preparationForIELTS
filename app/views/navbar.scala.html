@@ -13,19 +13,28 @@
             <ul class="nav navbar-nav">
                 <li class="@if(activePage == "home") {active}"><a href="@routes.Application.index()">Home</a></li>
                 <li class="@if(activePage == "marks") {active}"><a href="@routes.MarkList.showList()">Marks</a></li>
-                <li class="@if(activePage == "addText") {active}"><a href="@routes.TextList.showRForm()">R-Form</a></li>
-                <li class="@if(activePage == "addTextGroup") {active}"><a href="@routes.TextGroups.showAddForm()">AddTextGroups</a></li>
-                <li class="@if(activePage == "textGroupList") {active}"><a href="@routes.TextGroups.list()">TextGroupsList</a></li>
                 <li><a href="#" class="btn dropdown-toggle" data-toggle="dropdown">Tasks<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li class="@if(activePage == "reading") {active}"><a href="@routes.TextList.reading()">Reading</a></li>
-                        <li class="@if(activePage == "listening") {active}"><a href="@routes.TextList.listening()">Listening</a></li>
+                        <li class="@if(activePage == "reading") {active}"><a href="@routes.TextList.reading()">
+                            Reading</a></li>
+                        <li class="@if(activePage == "listening") {active}"><a href="@routes.TextList.listening()">
+                            Listening</a></li>
                         <li class="@if(activePage == "writing") {active}"><a href="#">Writing</a></li>
                         <li class="@if(activePage == "speaking") {active}"><a href="#">Speaking</a></li>
                     </ul>
                 </li>
+                <li><a href="#" class="btn dropdown-toggle" data-toggle="dropdown">AddForms<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="@if(activePage == "addText") {active}"><a href="@routes.TextList.showRForm()">
+                            R-Form</a></li>
+                        <li class="@if(activePage == "addTextGroup") {active}"><a href="@routes.TextGroups.showAddForm()">
+                            AddTextGroups</a></li>
+                        <li class="@if(activePage == "textGroupList") {active}"><a href="@routes.TextGroups.list()">
+                            TextGroupsList</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
     </div>
-
 </nav>

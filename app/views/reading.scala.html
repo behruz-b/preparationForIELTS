@@ -4,23 +4,23 @@
     <br/> <br/>
     <div class="container">
         <div class="row text-center">
-            <div class="col-xs-9 col-xs-offset-2">
+            <div class="col-xs-12">
             @for(textObj <- texts) {
-                <div class="row">
+                <div class="row ">
                     <div class="col-xs-10">
                         <h2>@textObj.text.title</h2>
-                        <h3>@textObj.text.text</h3></div>
-                    <div class="col-xs-1">
+                        <h3 class="text-justify">@textObj.text.text</h3></div>
+                    <div class="col-xs-2">
                         <a href="@routes.TextList.update(textObj.text.id.get)">
-                            <button class="btn btn-warning">Edit</button>
+                            <button class="btn btn-info btn-xs">Edit</button>
                         </a>
                         <a href="@routes.TextList.remove(textObj.text.id.get)">
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-danger btn-xs">Delete</button>
                         </a>
                     </div>
-                    <div class="col-xs-1">
-                        <p>@textObj.textGroupName</p>
-                    </div>
+                    @*<div class="col-xs-1">*@
+                        @*<p>@textObj.textGroupName</p>*@
+                    @*</div>*@
                 </div>
             }
             </div>

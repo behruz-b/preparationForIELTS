@@ -55,8 +55,8 @@ class TextList extends Controller {
   }
   def update(id: Int) = DBAction { implicit rs =>
     val formParams = rs.body.asFormUrlEncoded
-    val title = formParams.get("title")(0)
-    val text = formParams.get("text")(0)
+    val title = formParams.get("Title")(0)
+    val text = formParams.get("Text")(0)
     val textGroupId = formParams.get("textGroup")(0).toInt
 
     val texts = Text(Some(id), title,text, textGroupId)
